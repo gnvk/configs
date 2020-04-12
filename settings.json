@@ -1,0 +1,22 @@
+{
+  "editor.rulers": [
+      80,
+      100
+  ],
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "window.newWindowDimensions": "inherit",
+  "workbench.colorTheme": "Default Light+",
+  "workbench.startupEditor": "newUntitledFile",
+
+  "go.useLanguageServer": true,
+  "go.languageServerFlags": [
+      "-rpc.trace"
+  ],
+  "python.pythonPath": "/home/gnvk/.pyenv/shims/python",
+  "[python]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4
+  },
+  "window.zoomLevel": 0,
+}

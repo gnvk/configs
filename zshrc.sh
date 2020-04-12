@@ -57,7 +57,7 @@ alias gg='gl --grep'
 # Go
 export GOPATH="$HOME/Dev/go"
 export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:/usr/local/kubebuilder/bin"
+export PATH="$PATH:/usr/local/go/bin:/usr/local/kubebuilder/bin"
 
 # Kubernetes
 alias k='kubectl'
@@ -126,4 +126,6 @@ case $(uname -s) in
 esac
 
 # Custom
-source "$HOME/.zshrc.custom"
+if [ -f "$HOME/.zshrc.custom" ]; then
+    source "$HOME/.zshrc.custom"
+fi

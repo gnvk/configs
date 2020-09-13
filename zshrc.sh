@@ -84,7 +84,7 @@ POWERLEVEL9K_KUBECONTEXT_BACKGROUND='063'
 POWERLEVEL9K_PYENV_BACKGROUND='yellow'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='yellow'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs kubecontext time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
 
 # Python
 export PATH="$PATH:$HOME/.pyenv/bin"
@@ -105,13 +105,13 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="$PATH:$HOME/.npm-global/bin"
 
 # Terminal
-precmd() { 
+precmd() {
     # Rename tmux window to the current dir's basename
     if [ "$PWD" != "$LPWD" ];
-    then 
+    then
         LPWD="$PWD"
         if [ "$PWD" = "$HOME" ]; then name="~"; else name="${PWD//*\//}"; fi
-        tmux rename-window "$name"; fi 
+        tmux rename-window "$name"; fi
     }
 HISTSIZE=10000000
 setopt HIST_IGNORE_ALL_DUPS

@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# NOTE: Add the following lines to your .git/config file:
+#
+# [merge "git-crypt"]
+#     name = merge git-crypt encrypted files
+#     driver = git-crypt-merge %A %O %B %L
+#     recursive = binary
+
+current="$1"    # %A
+base="$2"       # %O
+other="$3"      # %B
+marker="$4"     # %L
+
+current_decrypted="${current}__decrypt"
+base_decrypted="${base}__decrypt"
+other_decrypted="${other}__decrypt"
+
+cat "$current" | git-crypt smudge > "${current_decrypted}"
+cat "$base"    | git-crypt smudge > "${base_decrypted}"
+cat "$other"   | git-crypt smudge > "${other_decrypted}"
+
+git merge-file -L "ours" -L "base" -L "theirs" --marker-size "$marker" "${current_decrypted}" "${base_decrypted}" "${other_decrypted}"
+exit_code=$?
+
+cat "${current_decrypted}" | git-crypt clean > "$current"
+rm "${other_decrypted}" "${base_decrypted}" "${current_decrypted}"
+
+if [ "$exit_code" -ne "0" ]; then
+    echo "git-crypt-merge: you need to manually resolve conflicts..."
+fi
+
+exit $exit_code

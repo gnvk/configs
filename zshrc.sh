@@ -1,7 +1,15 @@
 #!/bin/zsh
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_HIGHLIGHT_MAXLENGTH=300
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_TMUX_AUTOSTART=true
 
 # Uncomment the following line if pasting URLs and other text is messed up.
@@ -46,6 +54,7 @@ alias ll="ls -lah"
 alias look="find . -name"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
 export PATH="$PATH:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$HOME/Dev/configs"
 
 # Git
 alias gs='git status'
@@ -71,20 +80,9 @@ alias kns='k config set-context $(k config current-context) --namespace '
 alias kcontext='k config use-context '
 source <(kubectl completion zsh)
 
-# Powerlevel9k
-POWERLEVEL9K_DIR_ETC_BACKGROUND='navyblue'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='navyblue'
-POWERLEVEL9K_DIR_HOME_BACKGROUND='navyblue'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='navyblue'
-POWERLEVEL9K_DIR_ETC_FOREGROUND='white'
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
-POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
-POWERLEVEL9K_KUBECONTEXT_BACKGROUND='063'
-POWERLEVEL9K_PYENV_BACKGROUND='yellow'
-POWERLEVEL9K_VIRTUALENV_BACKGROUND='yellow'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
+# Powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Python
 export PATH="$PATH:$HOME/.pyenv/bin"

@@ -1,23 +1,83 @@
 {
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.renderFinalNewline": false,
+  "editor.renderWhitespace": "boundary",
   "editor.rulers": [
-      80,
-      100
+    80,
+    100
   ],
   "editor.tabSize": 2,
-  "files.trimTrailingWhitespace": true,
-  "window.newWindowDimensions": "inherit",
-  "workbench.colorTheme": "Default Light+",
-  "workbench.startupEditor": "newUntitledFile",
-
-  "go.useLanguageServer": true,
-  "go.languageServerFlags": [
-      "-rpc.trace"
-  ],
-  "python.pythonPath": "/home/gnvk/.pyenv/shims/python",
-  "[python]": {
-      "editor.insertSpaces": true,
-      "editor.tabSize": 4
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    "**/helm-charts/**/*.yaml": "goyaml",
+    "**/helm-charts/**/*.yml": "goyaml"
   },
-"window.zoomLevel": 0,
-"workbench.iconTheme": "material-icon-theme",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "go.alternateTools": {
+    " goreturns": "golines"
+  },
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "followPointers": true,
+      "maxArrayValues": 200,
+      "maxStringLen": 99999,
+      "maxStructFields": -1,
+      "maxVariableRecurse": 3
+    },
+    "useApiV1": false
+  },
+  "go.formatTool": "goreturns",
+  "go.languageServerFlags": [
+    "-rpc.trace"
+  ],
+  "go.testFlags": [
+    "-v"
+  ],
+  "go.testTimeout": "6s",
+  "go.useLanguageServer": true,
+  "python.formatting.provider": "autopep8",
+  "python.languageServer": "Pylance",
+  "python.pythonPath": "/Users/gnvk/.pyenv/shims/python",
+  "python.showStartPage": false,
+  "python.testing.pytestEnabled": true,
+  "sqltools.connections": [
+    {
+      "database": "gobroker",
+      "driver": "PostgreSQL",
+      "name": "local gobroker",
+      "password": "alpacas",
+      "port": 5432,
+      "previewLimit": 50,
+      "server": "localhost",
+      "username": "alpaca"
+    }
+  ],
+  "window.newWindowDimensions": "inherit",
+  "workbench.colorCustomizations": {
+    "[GitHub Plus]": {
+      "editor.lineHighlightBackground": "#f5fbfc"
+    }
+  },
+  "workbench.colorTheme": "GitHub Plus",
+  "workbench.editor.openSideBySideDirection": "down",
+  "workbench.editorAssociations": [
+    {
+      "filenamePattern": "*.ipynb",
+      "viewType": "jupyter.notebook.ipynb"
+    }
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile"
 }

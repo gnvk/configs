@@ -46,6 +46,7 @@ fd() {
 alias ll="ls -lah"
 alias look="find . -name"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
+export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH="$PATH:$HOME/Dev/configs"
 

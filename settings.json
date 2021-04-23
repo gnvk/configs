@@ -7,6 +7,7 @@
     "editor.defaultFormatter": "mtxr.sqltools"
   },
   "breadcrumbs.enabled": true,
+  "docker.showStartPage": false,
   "editor.minimap.enabled": false,
   "editor.renderFinalNewline": false,
   "editor.renderWhitespace": "boundary",
@@ -46,6 +47,7 @@
     "-v"
   ],
   "go.testTimeout": "6s",
+  "go.toolsManagement.autoUpdate": true,
   "go.useLanguageServer": true,
   "python.formatting.provider": "autopep8",
   "python.languageServer": "Pylance",
